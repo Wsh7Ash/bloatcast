@@ -1,0 +1,246 @@
+{
+  "captured_at": "2026-11-18T09:00:00Z",
+  "settings": {
+    "autovacuum_vacuum_threshold": 50.0,
+    "autovacuum_vacuum_scale_factor": 0.2,
+    "autovacuum_analyze_threshold": 50.0,
+    "autovacuum_analyze_scale_factor": 0.1
+  },
+  "summary": {
+    "counts": {
+      "ok": 3,
+      "info": 1,
+      "warn": 1,
+      "critical": 5
+    },
+    "tables": 10,
+    "reclaimable_bytes": 2987744534
+  },
+  "findings": [
+    {
+      "schema": "public",
+      "table": "events",
+      "severity": "critical",
+      "code": "vacuum-critical",
+      "dead_ratio": 0.240506,
+      "live_tuples": 30000000,
+      "dead_tuples": 9500000,
+      "reltuples": 30000000.0,
+      "size_bytes": 8589934592,
+      "vacuum_trigger": 6000050,
+      "analyze_trigger": 3000050,
+      "reclaimable_bytes": 2065933636,
+      "reasons": [
+        "dead tuples 9,500,000 reached the autovacuum trigger 6,000,050",
+        "24.1% of tuples are dead",
+        "last vacuum recorded at 2026-11-17 22:40:55+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "orders",
+      "severity": "critical",
+      "code": "vacuum-critical",
+      "dead_ratio": 0.253996,
+      "live_tuples": 4200000,
+      "dead_tuples": 1430000,
+      "reltuples": 4200000.0,
+      "size_bytes": 2899102924,
+      "vacuum_trigger": 210050,
+      "analyze_trigger": 420050,
+      "reclaimable_bytes": 736361844,
+      "reasons": [
+        "dead tuples 1,430,000 reached the autovacuum trigger 210,050",
+        "25.4% of tuples are dead",
+        "1,221,000 rows changed since the last analyze (threshold 420,050)",
+        "last vacuum recorded at 2026-11-09 04:52:18+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "invoices",
+      "severity": "critical",
+      "code": "vacuum-critical",
+      "dead_ratio": 0.2,
+      "live_tuples": 840000,
+      "dead_tuples": 210000,
+      "reltuples": 840000.0,
+      "size_bytes": 335544320,
+      "vacuum_trigger": 168050,
+      "analyze_trigger": 84050,
+      "reclaimable_bytes": 67108864,
+      "reasons": [
+        "dead tuples 210,000 reached the autovacuum trigger 168,050",
+        "20.0% of tuples are dead",
+        "90,000 rows changed since the last analyze (threshold 84,050)",
+        "last vacuum recorded at 2026-11-18 01:02:00+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "products",
+      "severity": "critical",
+      "code": "vacuum-critical",
+      "dead_ratio": 0.3,
+      "live_tuples": 42000,
+      "dead_tuples": 18000,
+      "reltuples": 42000.0,
+      "size_bytes": 41943040,
+      "vacuum_trigger": 8450,
+      "analyze_trigger": 4250,
+      "reclaimable_bytes": 12582912,
+      "reasons": [
+        "dead tuples 18,000 reached the autovacuum trigger 8,450",
+        "30.0% of tuples are dead",
+        "7,000 rows changed since the last analyze (threshold 4,250)",
+        "last vacuum recorded at 2026-11-16 12:00:00+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "notifications",
+      "severity": "critical",
+      "code": "vacuum-critical",
+      "dead_ratio": 0.296875,
+      "live_tuples": 900,
+      "dead_tuples": 380,
+      "reltuples": 900.0,
+      "size_bytes": 409600,
+      "vacuum_trigger": 230,
+      "analyze_trigger": 140,
+      "reclaimable_bytes": 121600,
+      "reasons": [
+        "dead tuples 380 reached the autovacuum trigger 230",
+        "29.7% of tuples are dead",
+        "210 rows changed since the last analyze (threshold 140)",
+        "last vacuum recorded at 2026-11-15 08:30:00+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "severity": "warn",
+      "code": "vacuum-overdue",
+      "dead_ratio": 0.193548,
+      "live_tuples": 100000,
+      "dead_tuples": 24000,
+      "reltuples": 100000.0,
+      "size_bytes": 26214400,
+      "vacuum_trigger": 20050,
+      "analyze_trigger": 10050,
+      "reclaimable_bytes": 5073755,
+      "reasons": [
+        "dead tuples 24,000 reached the autovacuum trigger 20,050",
+        "19.4% of tuples are dead",
+        "last vacuum recorded at 2026-11-12 19:20:00+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "audit_log",
+      "severity": "info",
+      "code": "analyze-overdue",
+      "dead_ratio": 0.093656,
+      "live_tuples": 6000000,
+      "dead_tuples": 620000,
+      "reltuples": 6000000.0,
+      "size_bytes": 1073741824,
+      "vacuum_trigger": 1200050,
+      "analyze_trigger": 600050,
+      "reclaimable_bytes": 100561923,
+      "reasons": [
+        "dead tuples 620,000 are below the trigger 1,200,050",
+        "2,400,000 rows changed since the last analyze (threshold 600,050)",
+        "last vacuum recorded at 2026-11-14 05:00:00+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "severity": "ok",
+      "code": "within-threshold",
+      "dead_ratio": 0.069767,
+      "live_tuples": 12000000,
+      "dead_tuples": 900000,
+      "reltuples": 12000000.0,
+      "size_bytes": 1610612736,
+      "vacuum_trigger": 2400050,
+      "analyze_trigger": 1200050,
+      "reclaimable_bytes": 112368330,
+      "reasons": [
+        "dead tuples 900,000 are below the trigger 2,400,050",
+        "last vacuum recorded at 2026-11-18 06:15:00+00"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "imports",
+      "severity": "ok",
+      "code": "within-threshold",
+      "dead_ratio": 0.01088,
+      "live_tuples": 5000000,
+      "dead_tuples": 55000,
+      "reltuples": 5000000.0,
+      "size_bytes": 3221225472,
+      "vacuum_trigger": 1000050,
+      "analyze_trigger": 500050,
+      "reclaimable_bytes": 35047953,
+      "reasons": [
+        "dead tuples 55,000 are below the trigger 1,000,050"
+      ]
+    },
+    {
+      "schema": "public",
+      "table": "ledger_entries",
+      "severity": "ok",
+      "code": "empty-table",
+      "dead_ratio": 0.0,
+      "live_tuples": 0,
+      "dead_tuples": 0,
+      "reltuples": 0.0,
+      "size_bytes": 8192,
+      "vacuum_trigger": 50,
+      "analyze_trigger": 50,
+      "reclaimable_bytes": 0,
+      "reasons": []
+    }
+  ],
+  "recommendations": [
+    {
+      "table": "public.events",
+      "setting": "autovacuum_vacuum_scale_factor",
+      "sql": "ALTER TABLE public.events SET (autovacuum_vacuum_scale_factor = 0.04);",
+      "note": "triggers at 1,200,050 dead tuples (5% of ~30,000,000 rows) instead of 6,000,050"
+    },
+    {
+      "table": "public.orders",
+      "setting": "autovacuum_vacuum_scale_factor",
+      "sql": "ALTER TABLE public.orders SET (autovacuum_vacuum_scale_factor = 0.04);",
+      "note": "triggers at 168,050 dead tuples (5% of ~4,200,000 rows) instead of 210,050"
+    },
+    {
+      "table": "public.invoices",
+      "setting": "autovacuum_vacuum_scale_factor",
+      "sql": "ALTER TABLE public.invoices SET (autovacuum_vacuum_scale_factor = 0.04);",
+      "note": "triggers at 33,650 dead tuples (5% of ~840,000 rows) instead of 168,050"
+    },
+    {
+      "table": "public.products",
+      "setting": "autovacuum_vacuum_scale_factor",
+      "sql": "ALTER TABLE public.products SET (autovacuum_vacuum_scale_factor = 0.04);",
+      "note": "triggers at 1,730 dead tuples (5% of ~42,000 rows) instead of 8,450"
+    },
+    {
+      "table": "public.notifications",
+      "setting": "autovacuum_vacuum_threshold",
+      "sql": "ALTER TABLE public.notifications SET (autovacuum_vacuum_threshold = 45);",
+      "note": "row threshold dominates on this small table; triggers at 225 dead tuples instead of 230"
+    },
+    {
+      "table": "public.users",
+      "setting": "autovacuum_vacuum_scale_factor",
+      "sql": "ALTER TABLE public.users SET (autovacuum_vacuum_scale_factor = 0.04);",
+      "note": "triggers at 4,050 dead tuples (5% of ~100,000 rows) instead of 20,050"
+    }
+  ]
+}

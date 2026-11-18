@@ -1,0 +1,112 @@
+{
+  "captured_at": "2026-11-18T09:00:00Z",
+  "settings": {
+    "autovacuum_vacuum_threshold": 50,
+    "autovacuum_vacuum_scale_factor": 0.2,
+    "autovacuum_analyze_threshold": 50,
+    "autovacuum_analyze_scale_factor": 0.1
+  },
+  "tables": [
+    {
+      "schema": "public",
+      "table": "orders",
+      "live_tuples": 4200000,
+      "dead_tuples": 1430000,
+      "reltuples": 4200000,
+      "table_size_bytes": 2899102924,
+      "mod_since_analyze": 1221000,
+      "reloptions": { "autovacuum_vacuum_scale_factor": "0.05" },
+      "last_vacuum": "2026-10-02 03:11:04+00",
+      "last_autovacuum": "2026-11-09 04:52:18+00"
+    },
+    {
+      "schema": "public",
+      "table": "events",
+      "live_tuples": 30000000,
+      "dead_tuples": 9500000,
+      "reltuples": 30000000,
+      "table_size_bytes": 8589934592,
+      "mod_since_analyze": 640000,
+      "last_vacuum": null,
+      "last_autovacuum": "2026-11-17 22:40:55+00"
+    },
+    {
+      "schema": "public",
+      "table": "invoices",
+      "live_tuples": 840000,
+      "dead_tuples": 210000,
+      "reltuples": 840000,
+      "table_size_bytes": 335544320,
+      "mod_since_analyze": 90000,
+      "last_autovacuum": "2026-11-18 01:02:00+00"
+    },
+    {
+      "schema": "public",
+      "table": "products",
+      "live_tuples": 42000,
+      "dead_tuples": 18000,
+      "reltuples": 42000,
+      "table_size_bytes": 41943040,
+      "mod_since_analyze": 7000,
+      "last_autovacuum": "2026-11-16 12:00:00+00"
+    },
+    {
+      "schema": "public",
+      "table": "notifications",
+      "live_tuples": 900,
+      "dead_tuples": 380,
+      "reltuples": 900,
+      "table_size_bytes": 409600,
+      "mod_since_analyze": 210,
+      "last_autovacuum": "2026-11-15 08:30:00+00"
+    },
+    {
+      "schema": "public",
+      "table": "users",
+      "live_tuples": 100000,
+      "dead_tuples": 24000,
+      "reltuples": 100000,
+      "table_size_bytes": 26214400,
+      "mod_since_analyze": 5000,
+      "last_autovacuum": "2026-11-12 19:20:00+00"
+    },
+    {
+      "schema": "public",
+      "table": "audit_log",
+      "live_tuples": 6000000,
+      "dead_tuples": 620000,
+      "reltuples": 6000000,
+      "table_size_bytes": 1073741824,
+      "mod_since_analyze": 2400000,
+      "last_autovacuum": "2026-11-14 05:00:00+00"
+    },
+    {
+      "schema": "public",
+      "table": "sessions",
+      "live_tuples": 12000000,
+      "dead_tuples": 900000,
+      "reltuples": 12000000,
+      "table_size_bytes": 1610612736,
+      "mod_since_analyze": 100000,
+      "last_autovacuum": "2026-11-18 06:15:00+00"
+    },
+    {
+      "schema": "public",
+      "table": "imports",
+      "live_tuples": 5000000,
+      "dead_tuples": 55000,
+      "reltuples": 5000000,
+      "table_size_bytes": 3221225472,
+      "mod_since_analyze": 0
+    },
+    {
+      "schema": "public",
+      "table": "ledger_entries",
+      "live_tuples": 0,
+      "dead_tuples": 0,
+      "reltuples": 0,
+      "table_size_bytes": 8192,
+      "mod_since_analyze": 0
+    }
+  ]
+}

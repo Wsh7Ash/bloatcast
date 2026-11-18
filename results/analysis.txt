@@ -1,0 +1,75 @@
+bloatcast - vacuum pressure report
+captured 2026-11-18T09:00:00Z | 10 tables | global trigger 50 + 0.20 x rows
+
+CRITICAL public.events                       24.1% dead |   1.9 GiB reclaimable
+         rows live 30,000,000 / dead 9,500,000 | trigger 6,000,050 | size 8.0 GiB
+         - dead tuples 9,500,000 reached the autovacuum trigger 6,000,050
+         - 24.1% of tuples are dead
+         - last vacuum recorded at 2026-11-17 22:40:55+00
+         fix ALTER TABLE public.events SET (autovacuum_vacuum_scale_factor = 0.04);
+             triggers at 1,200,050 dead tuples (5% of ~30,000,000 rows) instead of 6,000,050
+
+CRITICAL public.orders                       25.4% dead | 702.2 MiB reclaimable
+         rows live 4,200,000 / dead 1,430,000 | trigger 210,050 | size 2.7 GiB
+         - dead tuples 1,430,000 reached the autovacuum trigger 210,050
+         - 25.4% of tuples are dead
+         - 1,221,000 rows changed since the last analyze (threshold 420,050)
+         - last vacuum recorded at 2026-11-09 04:52:18+00
+         fix ALTER TABLE public.orders SET (autovacuum_vacuum_scale_factor = 0.04);
+             triggers at 168,050 dead tuples (5% of ~4,200,000 rows) instead of 210,050
+
+CRITICAL public.invoices                     20.0% dead |  64.0 MiB reclaimable
+         rows live 840,000 / dead 210,000 | trigger 168,050 | size 320.0 MiB
+         - dead tuples 210,000 reached the autovacuum trigger 168,050
+         - 20.0% of tuples are dead
+         - 90,000 rows changed since the last analyze (threshold 84,050)
+         - last vacuum recorded at 2026-11-18 01:02:00+00
+         fix ALTER TABLE public.invoices SET (autovacuum_vacuum_scale_factor = 0.04);
+             triggers at 33,650 dead tuples (5% of ~840,000 rows) instead of 168,050
+
+CRITICAL public.products                     30.0% dead |  12.0 MiB reclaimable
+         rows live 42,000 / dead 18,000 | trigger 8,450 | size 40.0 MiB
+         - dead tuples 18,000 reached the autovacuum trigger 8,450
+         - 30.0% of tuples are dead
+         - 7,000 rows changed since the last analyze (threshold 4,250)
+         - last vacuum recorded at 2026-11-16 12:00:00+00
+         fix ALTER TABLE public.products SET (autovacuum_vacuum_scale_factor = 0.04);
+             triggers at 1,730 dead tuples (5% of ~42,000 rows) instead of 8,450
+
+CRITICAL public.notifications                29.7% dead | 118.8 KiB reclaimable
+         rows live 900 / dead 380 | trigger 230 | size 400.0 KiB
+         - dead tuples 380 reached the autovacuum trigger 230
+         - 29.7% of tuples are dead
+         - 210 rows changed since the last analyze (threshold 140)
+         - last vacuum recorded at 2026-11-15 08:30:00+00
+         fix ALTER TABLE public.notifications SET (autovacuum_vacuum_threshold = 45);
+             row threshold dominates on this small table; triggers at 225 dead tuples instead of 230
+
+WARN     public.users                        19.4% dead |   4.8 MiB reclaimable
+         rows live 100,000 / dead 24,000 | trigger 20,050 | size 25.0 MiB
+         - dead tuples 24,000 reached the autovacuum trigger 20,050
+         - 19.4% of tuples are dead
+         - last vacuum recorded at 2026-11-12 19:20:00+00
+         fix ALTER TABLE public.users SET (autovacuum_vacuum_scale_factor = 0.04);
+             triggers at 4,050 dead tuples (5% of ~100,000 rows) instead of 20,050
+
+INFO     public.audit_log                     9.4% dead |  95.9 MiB reclaimable
+         rows live 6,000,000 / dead 620,000 | trigger 1,200,050 | size 1.0 GiB
+         - dead tuples 620,000 are below the trigger 1,200,050
+         - 2,400,000 rows changed since the last analyze (threshold 600,050)
+         - last vacuum recorded at 2026-11-14 05:00:00+00
+
+OK       public.sessions                      7.0% dead | 107.2 MiB reclaimable
+         rows live 12,000,000 / dead 900,000 | trigger 2,400,050 | size 1.5 GiB
+         - dead tuples 900,000 are below the trigger 2,400,050
+         - last vacuum recorded at 2026-11-18 06:15:00+00
+
+OK       public.imports                       1.1% dead |  33.4 MiB reclaimable
+         rows live 5,000,000 / dead 55,000 | trigger 1,000,050 | size 3.0 GiB
+         - dead tuples 55,000 are below the trigger 1,000,050
+
+OK       public.ledger_entries                0.0% dead |       0 B reclaimable
+         rows live 0 / dead 0 | trigger 50 | size 8.0 KiB
+
+summary: 5 critical, 1 warn, 1 info, 3 ok | ~2.8 GiB estimated reclaimable
+note: ratios come from pg_stat_user_tables estimates; VACUUM makes space reusable, it does not return it to the filesystem (VACUUM FULL / pg_repack do).
